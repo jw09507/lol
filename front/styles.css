@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+:root {
+    --primary-color: #989572;
+    --primary-hover-color: #6D6B4A;
+    --background-color: #F0F1ED;
+    --text-color: #494832;
+    --error-color: red;
+    --success-color: green;
+    --footer-color: #6D6B4A;
+    --footer-text-color: white;
+    --footer-thickness: 50px;
+}
+
+body {
+    font-family: 'Itim', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    display: block;
+    height: auto;
+    overflow-y: auto;
+}
+
+body.page-content {
+    flex: none;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 120px;
+    overflow-y: auto;
+}
+
+nav {
+    background-color: var(--primary-color);
+    color: var(--footer-text-color);
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 4px solid var(--primary-hover-color);
+    width: 100%;
+    position: fixed; /* Keep the navbar fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+}
+
+nav .brand {
+    margin-bottom: 10px;
+}
+
+nav .brand a {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--footer-text-color);
+    text-decoration: none;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: var(--footer-text-color);
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav a:hover,
+nav a:focus,
+nav a:active {
+    color: var(--text-color); /* Change color on hover, focus, and active */
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 0; /* Adjust padding for smaller screens */
+    }
+
+    nav .brand a {
+        font-size: 2em; /* Reduce font size for the brand on smaller screens */
+    }
+
+    nav .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    nav a:hover,
+    nav a:focus,
+    nav a:active {
+        color: var(--text-color); /* Ensure hover effect works on mobile */
+    }
+}
+
+form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+input, select, textarea {
+    width: calc(100% - 18px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: 'Itim', cursive;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--footer-text-color);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'Itim', cursive;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.error-message {
+    color: var(--error-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    color: var(--success-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: var(--footer-color);
+    color: var(--footer-text-color);
+    height: var(--footer-thickness);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    flex-shrink: 0;
+}
+
+.forms-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    height: auto;
+    flex-wrap: wrap;
+}
+
+.tips-container,
+.interactive-container,
+.booking-form {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    box-sizing: border-box;
+    min-width: 300px;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    background-color: var(--primary-color);
+    color: var(--footer-text-color);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tip-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.tip-image img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; /* Limit the maximum width of the images */
+    border-radius: 5px;
+    object-fit: contain; /* Ensure the images maintain their aspect ratio */
+}
+
